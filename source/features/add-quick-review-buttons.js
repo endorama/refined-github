@@ -34,8 +34,9 @@ export default function () {
 				<button
 					name="pull_request_review[event]"
 					value={radio.value}
+					aria-label=`radio.getAttribute('aria-label')`
 					disabled=""
-					class={`btn btn-sm ${btnClassMap[radio.value] || ''}`}>
+					class={`btn btn-sm ${btnClassMap[radio.value] || ''} tooltipped tooltipped-no-delay tooltipped-right tooltipped-nw`}>
 					{radio.nextSibling.textContent.trim()}
 				</button>
 			);
