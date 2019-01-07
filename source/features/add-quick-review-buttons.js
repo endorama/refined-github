@@ -29,7 +29,17 @@ export default function () {
 
 	// Generate the new buttons
 	for (const radio of radios) {
-		if (!radio.disabled) {
+		if (radio.disabled) {
+			container.append(
+				<button
+					name="pull_request_review[event]"
+					value={radio.value}
+					disabled=""
+					class={`btn btn-sm ${btnClassMap[radio.value] || ''}`}>
+					{radio.nextSibling.textContent.trim()}
+				</button>
+			);
+		} else {
 			container.append(
 				<button
 					name="pull_request_review[event]"
